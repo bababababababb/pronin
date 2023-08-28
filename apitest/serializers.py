@@ -10,10 +10,19 @@ class ClientListSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class CsvCreateSerializer(serializers.ModelSerializer):
+class CsvUploadSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Order
-        fields = '__all__'
+        fields = (
+            'customer',
+            'item',
+            'total',
+            'quantity',
+            'date'
+        )
+
+    def create(self, validated_data):
+        pass
 
 
