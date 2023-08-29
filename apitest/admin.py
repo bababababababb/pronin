@@ -10,9 +10,10 @@ class GemAdmin(admin.ModelAdmin):
 
 
 class ClientAdmin(admin.ModelAdmin):
-
     list_display = ('username', 'spent_money')
     search_fields = ('username', )
+    ordering = ('-spent_money', )
+    filter_horizontal = ('gems', )
 
 
 class OrderAdmin(admin.ModelAdmin):
